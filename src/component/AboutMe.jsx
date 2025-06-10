@@ -47,19 +47,22 @@ const AboutMe = () => {
           viewport={{ once: false, amount: 0.3 }}
           className="font-medium text-xl tracking-tight transition-all duration-500 lg:w-3/4"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat optio
-          deserunt fugit minus molestiae? Delectus inventore placeat
-          voluptatibus libero aspernatur soluta odit officiis harum, esse
-          doloremque reprehenderit, quia quidem voluptates? Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Et unde dolores ipsum vitae
-          provident dicta blanditiis beatae, eligendi culpa quidem iure eius
-          obcaecati itaque molestias cum ex quas, a similique! Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Repellat, eius sint non maiores
-          neque alias culpa animi ut atque esse perferendis inventore deserunt
-          fuga officia commodi numquam, architecto veritatis totam! Lorem ipsum,
-          dolor sit amet consectetur adipisicing elit. Neque sint alias, eius
-          vel tempora quis repellendus dicta, exercitationem ratione eos odio
-          quaerat earum ut? Perferendis eos ea saepe error consequatur.
+          I am Deepak Kumar, a passionate and driven Computer Science Engineer
+          with a strong foundation in Java, Spring Boot, and backend
+          development. With a deep interest in software architecture,
+          microservices, and problem-solving, I thrive on building efficient and
+          scalable applications. My academic journey at VSB Engineering College,
+          where I maintain a CGPA of 8.3/10, has shaped my technical expertise,
+          complemented by hands-on experience in Spring Boot, Kafka, Redis, and
+          MySQL. As a Software Developer Intern at Kapture CX, I worked
+          extensively on microservices, event-driven architectures, and frontend
+          technologies like React.js, gaining a well-rounded skill set. My
+          projects, including a Turf Booking System and a Money Management App,
+          reflect my ability to design and develop robust applications. Beyond
+          academics, I am an athlete and a leader, having won championships in
+          athletics and football, showcasing my determination and teamwork. My
+          goal is to continuously learn, innovate, and contribute to impactful
+          software solutions while evolving into a skilled full-stack developer.
         </motion.p>
 
         {/* Animated Profile Image */}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./FlippingCard.css";
+import { Tooltip } from "@mui/material";
 
 const FlippingCard = ({ project }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -10,7 +11,7 @@ const FlippingCard = ({ project }) => {
       className="flip-card mb-10"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
-      onClick={()=>setIsFlipped(!isFlipped)}
+      onClick={() => setIsFlipped(!isFlipped)}
     >
       {/* Flip Container */}
       <motion.div
@@ -29,19 +30,21 @@ const FlippingCard = ({ project }) => {
         </div>
 
         {/* Back Side (Full Description & Tech Stack) */}
-        <div className="flip-card-back">
-          <h3 className="project-name">{project.name}</h3>
-          <p className="project-description text-neutral-400">
-            {project.description}
-          </p>
-          <div className="tech-stack-container">
-            {project.techStacks.map((tech, index) => (
-              <span key={index} className="tech-stack">
-                {tech}
-              </span>
-            ))}
+        <Tooltip title="click for more detail" placement="top" arrow>
+          <div className="flip-card-back">
+            {/* <h3 className="project-name">{project.name}</h3> */}
+            <p className="project-description text-neutral-400 ">
+              {project.description}
+            </p>
+            <div className="tech-stack-container ">
+              {project.techStacks.map((tech, index) => (
+                <span key={index} className="tech-stack">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        </Tooltip>
       </motion.div>
     </div>
   );
