@@ -1,9 +1,16 @@
 // ContactForm.jsx
-import React, { useRef } from "react";
+import React, { useRef , useEffect } from "react";
 import emailjs from "emailjs-com";
 
-const EmailContact = () => {
+const EmailContact = ({ref}) => {
   const form = useRef();
+
+  useEffect(()=>{
+    console.log("helo",ref?.current)
+    if(ref?.current){
+      ref.current.focus()
+    } 
+  },[ref])
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -32,7 +39,7 @@ const EmailContact = () => {
   return (
     <form ref={form} onSubmit={sendEmail} className="max-w-md mx-auto p-4">
       <label className="block mb-2 text-white">Name</label>
-      <input type="text" name="user_name" required className="w-full p-2 mb-4 rounded border border-white bg-transparent" />
+      <input ref={ref} type="text" name="user_name" required className="w-full p-2 mb-4 rounded border border-white bg-transparent" />
 
       <label className="block mb-2 text-white">Email</label>
       <input type="email" name="user_email" required className="w-full p-2 mb-4 rounded border border-white bg-transparent" />

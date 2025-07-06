@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState , useRef } from "react";
 import { motion } from "framer-motion";
 import { Contacts } from "../Datas/Datas";
 import EmailContact from "./EmailContact";
+import { MdPhone, MdEmail } from "react-icons/md";
+import { isMobile } from "react-device-detect";
 
 const shakeAnimation = {
   hidden: { opacity: 0, y: 50 },
@@ -22,6 +24,8 @@ const shakeAnimation = {
 const Contact = () => {
   const [showForm, setShowForm] = useState(false);
 
+  const ref = useRef()
+
   return (
     <motion.div
       className="text-gray-200 mb-4 border-b mr-10"
@@ -32,18 +36,36 @@ const Contact = () => {
       viewport={{ once: false, amount: 0.3 }}
     >
       <h1 className="text-center text-4xl my-16">Get in Touch</h1>
-      <div className="text-center tracking-tighter my-8">
-        <p className="my-4">{Contacts.addr}</p>
+
+      <div className="text-center tracking-tighter my-8 space-y-4">
+
+        {/* Mail with icon */}
         <button
-          className="text-blue-400 underline"
+          className="text-blue-400 underline flex items-center justify-center gap-2 mx-auto"
           onClick={() => setShowForm(!showForm)}
         >
+          <MdEmail size={20} />
           {Contacts.mail}
         </button>
 
-        <p className="my-4">{Contacts.phn}</p>
+        {/* Phone with icon and mobile detection */}
+        <div className="flex items-center justify-center gap-2 text-blue-400">
+          <MdPhone size={20} />
+          {isMobile ? (
+            <a href={`tel:${Contacts.phn}`} className="underline">
+              {Contacts.phn}
+            </a>
+          ) : (
+            <span>{Contacts.phn}</span>
+          )}
+        </div>
+
+        {/* Address */}
+        <p className="my-4">{Contacts.addr}</p>
       </div>
-      {showForm && <EmailContact />}
+
+      {/* Show Email Contact Form */}
+      {showForm && <EmailContact ref={ref}/>}
     </motion.div>
   );
 };
