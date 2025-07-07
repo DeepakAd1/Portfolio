@@ -48,4 +48,7 @@ export const Contacts = {
   addr: "Erode, Tamil Nadu-638 051",
   phn: "9942183330",
   mail: "deepakad212@gmail.com",
+  linkedIn:"https://www.linkedin.com/in/deepakad1/",
+  gitHub:"https://github.com/DeepakAd1",
+  instagram:"https://www.instagram.com/deepakad_1"
 };
